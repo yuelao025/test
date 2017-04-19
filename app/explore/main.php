@@ -153,6 +153,8 @@ class main extends AWS_CONTROLLER
 
 		TPL::assign('posts_list', $posts_list);
 		TPL::assign('posts_list_bit', TPL::output('explore/ajax/list', false));
+        //发现页面覆盖先写死; seo!
+		TPL::assign('page_title',"Php吧 - php论坛" );
 
 		TPL::output('explore/index');
 	}
