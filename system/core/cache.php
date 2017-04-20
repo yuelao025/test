@@ -23,7 +23,7 @@ class core_cache
 	);
 
 	// 支持 File, Memcached, APC, Xcache, 手册参考: http://framework.zend.com/manual/zh/zend.cache.html
-	private $backendName = 'File';
+	private $backendName = 'Redis';
 
 	private $backendOptions = array(
 		/*
@@ -39,6 +39,14 @@ class core_cache
 			)
 		)
 		*/
+
+		'servers' => array(
+				array(
+						'host' => '127.0.0.1',
+						'port' => 6379,
+						'dbindex' => 1
+				)
+		)
 	);
 
 	private $groupPrefix = '_group_';
