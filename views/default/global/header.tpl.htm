@@ -54,25 +54,25 @@
 
 
 					  <!--通知-->
-					  <!--<?php if ($this->user_id) { ?>-->
-					<!--<li>-->
-						<!--<a href="notifications/" class="<?php if ($_GET['app'] == 'notifications') { ?>active<?php } ?>"><i class="icon icon-bell"></i> <?php _e('通知'); ?></a>-->
-						<!--<span class="badge badge-important" style="display:none" id="notifications_unread"><?php echo $this->user_info['notification_unread']; ?></span>-->
-						<!--<div class="aw-dropdown pull-right hidden-xs">-->
-							<!--<div class="mod-body">-->
-								<!--<ul id="header_notification_list"></ul>-->
-							<!--</div>-->
-							<!--<div class="mod-footer">-->
-								<!--<a href="notifications/"><?php _e('查看全部'); ?></a>-->
-							<!--</div>-->
-						<!--</div>-->
-					<!--</li>-->
-					<!--<?php } ?>-->
+					  <?php if ($this->user_id) { ?>
+					<li>
+						<a href="notifications/" class="<?php if ($_GET['app'] == 'notifications') { ?>active<?php } ?>"><i class="icon icon-bell"></i> <?php _e('消息'); ?></a>
+						<span class="badge badge-important" style="display:none" id="notifications_unread"><?php echo $this->user_info['notification_unread']; ?></span>
+						<div class="aw-dropdown pull-right hidden-xs">
+							<div class="mod-body">
+								<ul id="header_notification_list"></ul>
+							</div>
+							<div class="mod-footer">
+								<a href="notifications/"><?php _e('查看全部'); ?></a>
+							</div>
+						</div>
+					</li>
+					<?php } ?>
 
 
 					<?php if (get_setting('enable_help_center') == 'Y') { ?><li><a href="help/"<?php if ($_GET['app'] == 'help') { ?> class="active"<?php } ?>><i class="icon icon-bulb"></i> <?php _e('帮助'); ?></a></li><?php } ?>
 					<li>
-						<a style="font-weight:bold;">· · ·</a>
+						<!--<a style="font-weight:bold;">· · ·</a>-->
 						<div class="dropdown-list pull-right">
 							<ul id="extensions-nav-list">
 								<?php if (check_extension_package('ticket') && get_setting('ticket_enabled') == 'Y' && ($this->user_info['permission']['publish_ticket'] || $this->user_info['permission']['is_administortar'] || $this->user_info['permission']['is_service'])) { ?>
