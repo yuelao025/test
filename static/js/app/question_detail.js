@@ -22,7 +22,24 @@ $(function()
 		{
 			if (G_ADVANCED_EDITOR_ENABLE == 'Y')
 			{
-				EDITOR = CKEDITOR.replace( 'wmd-input');
+				//EDITOR = CKEDITOR.replace( 'wmd-input');
+				EDITOR = editormd("wmd-cont", {
+                    width   : "100%",
+		            height  : 640,
+		            watch : false,
+		            path    : "static/js/editormd/lib/",
+		            toolbarIcons : function() {
+		    			return [
+					            "undo", "redo", "|", 
+					            "bold", "del", "italic", "quote", "|", 
+					            "h1", "h2", "h3", "|", 
+					            "list-ul", "list-ol", "hr", "|",
+					            "code-block","|",
+					            "table","html-entities", "pagebreak", "|",
+					            "watch", "preview",
+					        ]
+					}
+                });
 
 				EDITOR_CALLBACK = function (evt)
 				{

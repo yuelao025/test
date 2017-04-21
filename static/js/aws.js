@@ -132,12 +132,12 @@ var AWS =
 	ajax_post: function(formEl, processer, type) // 表单对象，用 jQuery 获取，回调函数名
 	{
 		// 若有编辑器的话就更新编辑器内容再提交
-		if (typeof CKEDITOR != 'undefined')
+		/*if (typeof CKEDITOR != 'undefined')
 		{
 			for ( instance in CKEDITOR.instances ) {
 				CKEDITOR.instances[instance].updateElement();
 			}
-		}
+		}*/
 
 		if (typeof (processer) != 'function')
 		{
@@ -157,10 +157,12 @@ var AWS =
 			$('.btn-reply').addClass('disabled');
 
 			// 删除草稿绑定事件
+			/*
 			if (EDITOR != undefined)
 			{
 				EDITOR.removeListener('blur', EDITOR_CALLBACK);
 			}
+			*/
 		}
 
 		var custom_data = {
@@ -734,7 +736,26 @@ var AWS =
 					{
 						$('#editor_reply').html(result.answer_content.replace('&amp;', '&'));
 
-						var editor = CKEDITOR.replace( 'editor_reply' );
+						//var editor = CKEDITOR.replace( 'editor_reply' );
+
+						var editor = editormd("wmd-cont", {
+		                        width   : "100%",
+					            height  : 640,
+					            watch : false,
+					            path    : "static/js/editormd/lib/",
+					            toolbarIcons : function() {
+					    			return [
+								            "undo", "redo", "|", 
+								            "bold", "del", "italic", "quote", "|", 
+								            "h1", "h2", "h3", "|", 
+								            "list-ul", "list-ol", "hr", "|",
+								            "code-block","|",
+								            "table","html-entities", "pagebreak", "|",
+								            "watch", "preview",
+								        ]
+								}
+
+		                });
 
 						if (UPLOAD_ENABLE == 'Y')
 						{
@@ -1915,13 +1936,22 @@ AWS.User =
 			}
 			else
 			{
+				var agree_num = parseInt(selector.html().replace(/[^0-9]/ig,""));
+
 				if (rating == 0)
 				{
-					selector.html(selector.html().replace(_t('我已赞'), _t('赞'))).removeClass('active');
+					
+					var selectorhtml = selector.html().replace(_t('我已赞'), _t('赞'));
+					
+					selector.html(selectorhtml.replace(agree_num, (agree_num-1))).removeClass('active');
+					
 				}
 				else
 				{
-					selector.html(selector.html().replace(_t('赞'), _t('我已赞'))).addClass('active');
+					var selectorhtml = selector.html().replace(_t('赞'), _t('我已赞'));
+					
+					selector.html(selectorhtml.replace(agree_num, (agree_num+1))).addClass('active');
+					
 				}
 			}
 		}, 'json');
@@ -1959,7 +1989,7 @@ AWS.Dropdown =
 				$(selector).parent().find('.aw-dropdown').show();
 			});
 		}
-		$(selector).keyup(function(e)
+		$(selector).bind('input propertychange',function(e)
 		{
 			if (type == 'search')
 			{

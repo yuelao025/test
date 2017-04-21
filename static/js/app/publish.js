@@ -17,7 +17,25 @@ $(function()
 	if (G_ADVANCED_EDITOR_ENABLE == 'Y')
 	{
 		// 初始化编辑器
-		var editor = CKEDITOR.replace( 'wmd-input' );
+		//var editor = CKEDITOR.replace( 'wmd-input' );
+
+		var editor = editormd("wmd-cont", {
+            width   : "100%",
+            height  : 640,
+            watch : false,
+            path    : "static/js/editormd/lib/",
+            toolbarIcons : function() {
+    			return [
+			            "undo", "redo", "|", 
+			            "bold", "del", "italic", "quote", "|", 
+			            "h1", "h2", "h3", "|", 
+			            "list-ul", "list-ol", "hr", "|",
+			            "code-block","|",
+			            "table","html-entities", "pagebreak", "|",
+			            "watch", "preview",
+			        ]
+			}
+        });
 	}
 
     if (ATTACH_ACCESS_KEY != '' && $('.aw-upload-box').length)

@@ -81,7 +81,12 @@ class FORMAT
 			return false;
 		}
 
-		return self::parse_links(load_class('Services_BBCode')->parse($text));
+		
+		//return self::parse_links(load_class('Services_BBCode')->parse($text));
+		
+		$Parsedown = load_class('Services_Parsedown'); 
+		$Parsedown->setBreaksEnabled(false);
+		return self::parse_links($Parsedown->text(htmlspecialchars_decode($text)));
 	}
 
 	// 兼容旧版本
