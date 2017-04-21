@@ -145,10 +145,10 @@
         onscroll             : function() {},
         onpreviewscroll      : function() {},
         
-        imageUpload          : true,
+        imageUpload          : false,
         imageFormats         : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
         imageUploadURL       : "",
-        crossDomainUpload    : true,
+        crossDomainUpload    : false,
         uploadCallbackURL    : "",
         
         toc                  : true,           // Table of contents
