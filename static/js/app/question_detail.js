@@ -34,7 +34,7 @@ $(function()
 					            "bold", "del", "italic", "quote", "|", 
 					            "h1", "h2", "h3", "|", 
 					            "list-ul", "list-ol", "hr", "|",
-							"link", "reference-link", "image",
+								"link", "image",
 					            "code-block","|",
 					            "table","html-entities", "pagebreak", "|",
 					            "watch", "preview",
