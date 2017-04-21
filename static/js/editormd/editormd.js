@@ -3365,7 +3365,7 @@
 
     // Emoji graphics files url path
     editormd.emoji     = {
-        path  : "http://www.emoji-cheat-sheet.com/graphics/emojis/",
+        path  : "http://www.webpagefx.com/tools/emoji-cheat-sheet/graphics/emojis/",
         ext   : ".png"
     };
 
@@ -4311,7 +4311,7 @@
             return dialog;
         };
 
-        dialog.lockScreen(true).showMask();
+        //dialog.lockScreen(true).showMask();
 
         dialog.show().css({
             zIndex : editormd.dialogZindex,
