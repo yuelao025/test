@@ -1533,7 +1533,7 @@
             }
 
             if (settings.sequenceDiagram) {
-                previewContainer.find(".sequence-diagram").sequenceDiagram({theme: "simple"});
+                previewContainer.find(".sequence-diagram").sequenceDiagram({theme: "full"});
             }
                     
             var preview    = $this.preview;
@@ -4006,7 +4006,7 @@
             }
 
             if (settings.sequenceDiagram) {
-                div.find(".sequence-diagram").sequenceDiagram({theme: "simple"});
+                div.find(".sequence-diagram").sequenceDiagram({theme: "full"});
             }
         }
 
