@@ -104,7 +104,7 @@
         delay                : 300,            // Delay parse markdown to html, Uint : ms
         autoLoadModules      : true,           // Automatic load dependent module files
         watch                : true,
-        placeholder          : "Enjoy Markdown! coding now...",
+        placeholder          : "php吧;分享知识,传播自己...",
         gotoLine             : true,
         codeFold             : false,
         autoHeight           : false,
@@ -145,10 +145,10 @@
         onscroll             : function() {},
         onpreviewscroll      : function() {},
         
-        imageUpload          : false,
+        imageUpload          : true,
         imageFormats         : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
         imageUploadURL       : "",
-        crossDomainUpload    : false,
+        crossDomainUpload    : true,
         uploadCallbackURL    : "",
         
         toc                  : true,           // Table of contents
