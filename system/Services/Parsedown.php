@@ -32,13 +32,13 @@ class Services_Parsedown
     private function gaoliang(){
         if(!$this->on_js){
 
-           TPL::import_js('js/highlight/highlight.pack.js'); //您保存js路径
-            //高亮样式=styles路径下的文件名 官方有例子可参照!
-            TPL::import_css('js/highlight/styles/monokai_sublime.min.css');
-            //用于初始化,当然你有更好的办法可以更改
-            $this->on_js = '<script >hljs.initHighlightingOnLoad();</script>';
-//            $this->on_js = '<script>$(document).ready(function() {$(\'pre code\').each(function(i, block){hljs.highlightBlock( block);});});</script>';
-            return  $this->on_js;
+//           TPL::import_js('js/highlight/highlight.pack.js'); //您保存js路径
+//            //高亮样式=styles路径下的文件名 官方有例子可参照!
+//            TPL::import_css('js/highlight/styles/monokai_sublime.min.css');
+//            //用于初始化,当然你有更好的办法可以更改
+//            $this->on_js = '<script >hljs.initHighlightingOnLoad();</script>';
+////            $this->on_js = '<script>$(document).ready(function() {$(\'pre code\').each(function(i, block){hljs.highlightBlock( block);});});</script>';
+//            return  $this->on_js;
 
 
 //            TPL::import_js('js/editormd/lib/prettify.min.js'); //您保存js路径
